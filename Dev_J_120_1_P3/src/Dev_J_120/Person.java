@@ -14,6 +14,11 @@ public abstract class Person {
         setDepartment(department);
         setGender(gender);
     }
+    /* По заданию 120 курса: статический метод printAll(Collection<Person> collection), 
+    печатающий данные обо всех персонах, содержащихся в заданной коллекции типа Collection<Person>.*/
+    public static void printAll(Collection<? extends Person> collection){
+        collection.forEach(Person::print); 
+    }
 
     public String getName() {
         return name;
@@ -64,9 +69,7 @@ public abstract class Person {
                 System.out.println("Этот товарищ не из нашего ВУЗа. Шутка");
         }    
     }
-    public static void printAll(Collection<Person> collection){
-        collection.forEach(Person::print); 
-    }
+
     public abstract void print();
 }
 
